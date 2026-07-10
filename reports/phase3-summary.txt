@@ -1,0 +1,39 @@
+PHASE 3 — ATTACK SIMULATION REPORT
+=====================================
+Analyst       : kabelo3
+Date          : $(date +%Y-%m-%d)
+Attacker VM   : Kali Linux (192.168.65.3)
+Target VM     : Ubuntu (192.168.65.4)
+
+ATTACKS EXECUTED
+----------------
+1. Hydra SSH Brute Force
+   Tool    : Hydra
+   Target  : 192.168.65.4:22
+   User    : ubuntu
+   Result  : 0 valid credentials found
+   Report  : hydra-results.txt
+
+2. Metasploit SSH Scanner
+   Tool    : Metasploit auxiliary/scanner/ssh/ssh_version
+   Target  : 192.168.65.4:22
+   Result  : SSH version fingerprinted
+   Report  : metasploit-results.txt
+
+3. Nikto Web Scanner
+   Tool    : Nikto
+   Target  : 192.168.65.4:80
+   Result  : Apache2 scanned, 1 host tested
+   Report  : nikto-results.txt
+
+TRAFFIC CAPTURED
+----------------
+- All attack traffic captured via Wireshark
+- Saved to: pcaps/phase3-attacks.pcap
+
+ANALYST NOTES
+-------------
+- SSH brute force generated real authentication failure logs on Ubuntu
+- Metasploit fingerprinted exact SSH version for CVE matching
+- Nikto identified Apache2 misconfigurations and exposed paths
+- All attack patterns are detectable in Splunk via auth.log analysis

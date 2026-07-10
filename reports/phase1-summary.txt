@@ -1,0 +1,27 @@
+PHASE 1 — ASSET DISCOVERY REPORT
+==================================
+Analyst       : kabelo3
+Date          : $(date +%2026-%July-%7)
+Tool          : Nmap
+Attacker VM   : Kali Linux (192.168.65.3)
+Target VM     : Ubuntu (192.168.65.4)
+
+OPEN PORTS
+----------
+22/tcp  — SSH (OpenSSH)
+80/tcp  — HTTP (Apache2)
+
+OS DETECTION
+------------
+Target OS: Ubuntu Linux
+
+ATTACK SURFACE SUMMARY
+-----------------------
+- SSH on port 22 — potential brute force target
+- HTTP on port 80 — potential web vulnerability target
+- Both services confirmed active and responding
+
+FILES SAVED
+-----------
+- asset-discovery.txt   (standard scan)
+- aggressive-scan.txt   (full -A scan)

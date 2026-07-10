@@ -1,0 +1,1 @@
+# Hydra v9.7 run at 2026-07-08 05:15:31 on 192.168.65.4 ssh (hydra -l ubuntu -P /home/kali/soc-lab/wordlist.txt -t 4 -V -o /home/kali/soc-lab/reports/hydra-results.txt ssh://192.168.65.4)

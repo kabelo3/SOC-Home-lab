@@ -1,0 +1,85 @@
+SOC INCIDENT REPORT
+====================
+Analyst       : kabelo3
+Date          : $(date +%Y-%m-%d)
+Lab           : SOC Home Lab
+Attacker VM   : Kali Linux (192.168.65.3)
+Target VM     : Ubuntu (192.168.65.4)
+
+EXECUTIVE SUMMARY
+-----------------
+A simulated attack was conducted against an Ubuntu Linux server
+in an isolated lab environment. The attack included network
+reconnaissance, vulnerability scanning, SSH brute force attempts,
+and web application scanning. All attack activity was successfully
+detected and logged using Splunk SIEM.
+
+INCIDENT TIMELINE
+-----------------
+Phase 1 | Asset Discovery
+- Nmap scan identified open ports 22 (SSH) and 80 (HTTP)
+- OS fingerprinted as Ubuntu Linux
+- Aggressive scan revealed service versions
+
+Phase 2 | Vulnerability Assessment
+- Nessus scan identified 24 Low severity vulnerabilities
+- No critical or high severity findings
+- SSH and HTTP services confirmed as attack surface
+
+Phase 3 | Attack Simulation
+- Hydra launched SSH brute force — 29 attempts recorded
+- Metasploit fingerprinted SSH service version
+- Nikto scanned Apache2 web server for misconfigurations
+- All attack traffic captured via Wireshark (phase3-attacks.pcap)
+
+Phase 4 | Detection and Alerting
+- Ubuntu auth.log ingested into Splunk SIEM
+- 29 failed password events detected and visualised
+- Attacker IP 192.168.65.3 identified via log analysis
+- Detection dashboard built with 4 panels
+
+FINDINGS
+--------
+1. SSH Brute Force Attack Detected
+   Source IP  : 192.168.65.3
+   Target     : 192.168.65.4:22
+   Attempts   : 29
+   Result     : No valid credentials found
+   Severity   : High
+
+2. Web Server Exposed
+   Service    : Apache2
+   Port       : 80
+   Risk       : Information disclosure
+   Severity   : Medium
+
+3. SSH Service Exposed
+   Service    : OpenSSH
+   Port       : 22
+   Risk       : Brute force target
+   Severity   : Medium
+
+RECOMMENDATIONS
+---------------
+1. Implement fail2ban to auto-block IPs after failed SSH attempts
+2. Disable password authentication — use SSH keys only
+3. Move SSH to a non-standard port (e.g. 2222)
+4. Implement a Web Application Firewall (WAF) for Apache
+5. Set up real-time Splunk alerts for failed password events
+6. Schedule weekly Nessus scans to track vulnerability changes
+
+EVIDENCE FILES
+--------------
+reports/asset-discovery.txt
+reports/aggressive-scan.txt
+reports/phase1-summary.txt
+reports/phase2-summary.txt
+reports/phase3-summary.txt
+reports/nessus-scan-results.nessus
+reports/hydra-results.txt
+reports/metasploit-results.txt
+reports/nikto-results.txt
+reports/ubuntu-auth.log
+reports/soc-incident-report.txt
+pcaps/phase3-attacks.pcap
+screenshots/splunk-dashboard.png

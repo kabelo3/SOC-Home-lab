@@ -1,0 +1,36 @@
+PHASE 2 — VULNERABILITY ASSESSMENT REPORT
+==========================================
+Analyst       : kabelo3
+Date          : $(date +%2026-%July-%8)
+Tool          : Nessus Essentials
+Attacker VM   : Kali Linux (192.168.65.3)
+Target VM     : Ubuntu (192.168.65.4)
+
+FINDINGS SUMMARY
+----------------
+Critical      : 0
+High          : 0
+Medium        : 0
+Low           : 24
+Informational : 0
+Total         : 24
+
+OPEN SERVICES SCANNED
+---------------------
+22/tcp  — SSH (OpenSSH)
+80/tcp  — HTTP (Apache2)
+
+ANALYST NOTES
+-------------
+- No critical or high severity vulnerabilities detected
+- Low severity findings indicate minor misconfigurations
+- SSH service exposed — monitor for brute force attempts
+- HTTP service exposed — monitor for web-based attacks
+- Recommend periodic rescanning after system updates
+
+REMEDIATION PRIORITY
+--------------------
+1. Review all Low severity findings individually
+2. Apply available patches via: sudo apt update && sudo apt upgrade
+3. Harden SSH configuration (/etc/ssh/sshd_config)
+4. Monitor Apache2 access logs for suspicious requests

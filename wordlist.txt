@@ -1,0 +1,10 @@
+password
+password123
+admin
+ubuntu
+root
+123456
+qwerty
+welcome
+letmein
+toor
