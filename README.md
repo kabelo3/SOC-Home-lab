@@ -1,4 +1,3 @@
-cat > /home/kali/soc-lab/README.md << 'EOF'
 # SOC Home Lab
 
 A personal Security Operations Center lab simulating real-world attack
